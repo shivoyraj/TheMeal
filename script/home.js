@@ -72,11 +72,10 @@ function addToSearchSuggestion(list, inputText) {
 
 function addToFavorite(item) {
     console.log("Adding item to favorite list " + item.strMeal)
-    var jsonString = JSON.stringify(item);
-    setCookie(item.strMeal, encodeURIComponent(jsonString))
+    setCookie(item.idMeal,item.strMeal)
 }
 
 function removeFromFavorite(item) {
     console.log("Removing item from favorite list " + item.strMeal)
-    deleteCookie(item.strMeal)
+    deleteCookie(item.idMeal)
 }

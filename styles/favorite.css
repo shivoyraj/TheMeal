@@ -15,29 +15,78 @@ h1 {
     position: absolute;
     top: 15vh;
     left: 20%;
+    height: 70vh;
+    width: 60vw;
     border-radius: 20px;
+    overflow-y: scroll;
+    overflow-x :hidden;
+}
+
+/* custom scrollbar */
+#list::-webkit-scrollbar {
+    width: 20px;
+}
+
+#list::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#list::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+#list::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
 }
 
 li{
-    margin: 10px 0; /* Add some vertical spacing between items */
+    /* Add some vertical spacing between items */
+    margin: 10px 0; 
     width: 60vw;
     height: 15vh;
     background-color: #ecf0f1;
 }
 
-img{
+li:hover{
+    background-color :#a8bbbf;
+}
+
+#itemThumbnail{
     width: 10vw;
     height: 15vh;
 }
 
+#deleteIcon{
+    position: relative;
+    top: -18vh;
+    left: 75%;
+    width: 2vw;
+    height: 4vh;
+}
+
+#deleteIcon:hover{
+    background-color: rgb(255, 0, 0);
+    border-radius: 10px;
+}
+
 #itemName{
     position: relative;
-    top: -15vh;
-    left: 30%;  
+    top: -18vh;
+    left: 18%;
+    font-size: 3vmin;  
 }
 
 #itemCategory{
     position: relative;
     top: -15vh;
-    left: 30%;
+    left: 18%;
+}
+
+a{
+    position: relative;
+    top: 80vh;
+    left: 45%;
 }
