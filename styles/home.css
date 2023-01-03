@@ -92,7 +92,12 @@ td {
     background-color: #fffdfdfd;
 }
 
+td:hover{
+    background-color :#a8bbbf;
+}
+
 button{
+    width: 150px;
     border-radius: 10px;
     background-color :azure;
 }
