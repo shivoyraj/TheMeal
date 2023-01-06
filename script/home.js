@@ -1,6 +1,5 @@
 import { setCookie, getCookie, deleteCookie } from './cookies.js';
 
-
 let inputField = document.getElementById('searchInput');
 var list;
 
@@ -8,9 +7,8 @@ inputField.addEventListener('input', async function () {
 
     let inputText = inputField.value;
 
-    if (inputText.length == 1) {
+    if (inputText.length == 1)
         list = await getData(inputText.charAt(0))
-    }
 
     if (inputText.length == 0)
         document.getElementById("resultItems").style.visibility = "hidden";
@@ -41,12 +39,13 @@ function addToSearchSuggestion(list, inputText) {
         if (item.strMeal.toLowerCase().startsWith(inputText.toLowerCase())) {
             let row = document.createElement("tr");
             let c1 = document.createElement("td");
-            let a = document.createElement("a");
-            a.append(item.strMeal)
+            c1.append(item.strMeal)
+            c1.addEventListener('click', function () {
+                window.open('../meal.html?name='+item.strMeal, '_blank');
+            })
             let c2 = document.createElement("td");
-            c1.append(a);
             let button = document.createElement("button");
-            if (!getCookie(item.strMeal))
+            if (!getCookie(item.idMeal))
                 button.innerHTML = "Add to Fav";
             else
                 button.innerHTML = "Remove from Fav";
@@ -72,7 +71,7 @@ function addToSearchSuggestion(list, inputText) {
 
 function addToFavorite(item) {
     console.log("Adding item to favorite list " + item.strMeal)
-    setCookie(item.idMeal,item.strMeal)
+    setCookie(item.idMeal, item.strMeal)
 }
 
 function removeFromFavorite(item) {

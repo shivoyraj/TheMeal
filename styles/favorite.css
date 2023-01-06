@@ -61,15 +61,13 @@ li:hover{
 
 #deleteIcon{
     position: relative;
-    top: -18vh;
-    left: 75%;
-    width: 2vw;
-    height: 4vh;
+    top: -2vh;
+    left: 45vw;
+    font-size: 4vmin;
 }
 
 #deleteIcon:hover{
-    background-color: rgb(255, 0, 0);
-    border-radius: 10px;
+    color: rgb(255, 0, 0);
 }
 
 #itemName{

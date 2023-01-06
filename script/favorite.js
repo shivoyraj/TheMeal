@@ -17,7 +17,6 @@ var getData = async function (id) {
 
 function deleteItem(id){
     deleteCookie(id)
-    location.reload(true)
 }
 
 
@@ -29,7 +28,7 @@ function loadCookies() {
         
         let item = document.createElement("li")
         let itemThumbnail = document.createElement("img")
-        let deleteIcon = document.createElement("img")
+        let deleteIcon = document.createElement("i")
         let itemName = document.createElement("p")
         let itemCategory = document.createElement("p")
         
@@ -39,8 +38,10 @@ function loadCookies() {
         itemThumbnail.id = "itemThumbnail"
         deleteIcon.src = "../media/trash.png"
         deleteIcon.id = "deleteIcon"
+        deleteIcon.className = "fa fa-trash"
         deleteIcon.addEventListener('click', function () {  // Add click event listener
             deleteItem(k)
+            item.remove()
         });
         itemName.innerHTML = v
         itemName.id = "itemName"

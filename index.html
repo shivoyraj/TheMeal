@@ -10,20 +10,22 @@
 </head>
 
 <body>
-    <h1>The Meal App</h1>
-    <div class="box">
-        <div id="searchTitle">
-            <h2>Meal Search</h2>
+    <div class="container">
+        <h1>The Meal App</h1>
+        <div class="box">
+            <div id="searchTitle">
+                <h2>Meal Search</h2>
+            </div>
+            <input type="text" placeholder="Enter to Search" id="searchInput">
+            <img id="searchIcon" src="./media/search.svg" />
         </div>
-        <input type="text" placeholder="Enter to Search" id="searchInput">
-        <img id="searchIcon" src="./media/search.svg" />
+        <div id="resultItems">
+            <table id="results">
+            </table>
+        </div>
+        <a id="favlink" href="./favorite_list.html">Favorite Meal List</a>
+        <script type="module" src="./script/home.js"></script>
     </div>
-    <div id = "resultItems">
-        <table id="results">
-        </table>
-    </div>
-    <a id="favlink" href="./favorite_list.html">Favorite Meal List</a>
-    <script type="module" src="./script/home.js"></script>
 </body>
 
 </html>
