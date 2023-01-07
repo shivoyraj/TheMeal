@@ -46,9 +46,31 @@ img {
 }
 
 #instrn{
-    margin-top: 15vh;
+    margin-top: 10vh;
     margin-right: 1vw;
     margin-bottom: 3vh;
+    max-height: 25vh;
+    overflow-y: scroll;
+}
+
+/* custom scrollbar */
+#instrn::-webkit-scrollbar {
+    width: 20px;
+}
+
+#instrn::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+#instrn::-webkit-scrollbar-thumb {
+    background-color: #d6dee1;
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+#instrn::-webkit-scrollbar-thumb:hover {
+    background-color: #a8bbbf;
 }
 
 table{
