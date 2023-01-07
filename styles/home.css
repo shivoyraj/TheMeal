@@ -1,31 +1,21 @@
-/* body::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('../media/food4.jpg');
-    filter: blur(5px);
-    z-index: -1;
-} */
-
-
 body {
   background: conic-gradient(from 135deg, #9DA7E0, #CCD8FF);
   height: 96vh;
 }
 
-
 h1 {
     text-align: center;
     font-size: xx-large;
-    color: #00687bfd;
-    background-color: #ecf0f1;
+    color:  #f4f4f4;
+    margin-left: 40%;
+    width: 20vw;
+    height: 5vh;
+    border-radius: 10px;
+    background-color:  rgba(4, 4, 87, 0.5);
 }
 
 .box {
-    background-color: #ecf0f1;
+    background-color:  rgba(4, 4, 87, 0.5);
     max-height: calc(40vh + 30vh);
     width: 60vw;
     margin-top: 15vh;
@@ -34,6 +24,7 @@ h1 {
 }
 
 #searchTitle {
+    color: #f4f4f4;
     font-size: 3vw;
     padding-top: 1vh;
     margin-left: 30%;
@@ -59,7 +50,7 @@ input[type="text"] {
 }
 
 #resultItems {
-    background-color: #ecf0f1;
+    /* background-color:  rgba(4, 4, 87, 0.5);; */
     width: 60vw;
     margin-top: 20px;
     max-height: 30vh;
@@ -90,20 +81,22 @@ input[type="text"] {
 table {
     margin: 0 auto;
     /* Center table horizontally */
-    background-color: #fffdfdfd;
+    /* background-color: rgba(4, 4, 87, 0.5);; */
     bottom: 1px;
     border-radius: 20px;
 }
 
-tr {
-    background-color: #fffdfdfd;
+/* tr {
+    background-color: rgba(4, 4, 87, 0.5);;
 }
+*/
 
 td {
-    background-color: #fffdfdfd;
-}
+    color: aliceblue;
+} 
 
 td:hover {
+    color: #000;
     background-color: #a8bbbf;
 }
 
@@ -117,4 +110,9 @@ button {
     margin-top: 15px;
     margin-bottom: 20px;
     margin-left: 40%;
+}
+
+button:hover{
+    color: aliceblue;
+    background-color: #9DA7E0;
 }

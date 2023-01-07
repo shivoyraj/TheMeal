@@ -1,5 +1,6 @@
 body {
-    background-color: #fffdfdfd;
+    background: conic-gradient(from 135deg, #9DA7E0, #CCD8FF);
+    height: 96vh;
 }
 
 h1 {
@@ -8,10 +9,13 @@ h1 {
     background-color: #ecf0f1;
 }
 
-#list{
-    list-style: none; /* Remove bullet points or numbering */
-    margin: 0; /* Remove default margins */
-    padding: 0; /* Remove default padding */
+#list {
+    list-style: none;
+    /* Remove bullet points or numbering */
+    margin: 0;
+    /* Remove default margins */
+    padding: 0;
+    /* Remove default padding */
     position: absolute;
     top: 15vh;
     left: 20%;
@@ -19,7 +23,7 @@ h1 {
     width: 60vw;
     border-radius: 20px;
     overflow-y: scroll;
-    overflow-x :hidden;
+    overflow-x: hidden;
 }
 
 /* custom scrollbar */
@@ -42,49 +46,54 @@ h1 {
     background-color: #a8bbbf;
 }
 
-li{
+li {
     /* Add some vertical spacing between items */
-    margin: 10px 0; 
+    margin: 10px 0;
     width: 60vw;
     height: 15vh;
     background-color: #ecf0f1;
 }
 
-li:hover{
-    background-color :#a8bbbf;
+li:hover {
+    background-color: #a8bbbf;
 }
 
-#itemThumbnail{
+#itemThumbnail {
     width: 10vw;
     height: 15vh;
 }
 
-#deleteIcon{
+#deleteIcon {
     position: relative;
     top: -2vh;
     left: 45vw;
     font-size: 4vmin;
 }
 
-#deleteIcon:hover{
+#deleteIcon:hover {
     color: rgb(255, 0, 0);
 }
 
-#itemName{
+#itemName {
     position: relative;
     top: -18vh;
     left: 18%;
-    font-size: 3vmin;  
+    font-size: 3vmin;
 }
 
-#itemCategory{
+#itemCategory { 
     position: relative;
     top: -15vh;
     left: 18%;
 }
 
-a{
+a {
     position: relative;
     top: 80vh;
     left: 45%;
+    color: rgb(98, 35, 35);
+}
+
+a:hover{
+    color: #ecf0f1;
 }

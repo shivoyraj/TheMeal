@@ -1,17 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/meal.css">
     <title>Meal Details</title>
 </head>
+
 <body>
-    <h1 id="mealHeading"></h1>
-    <div id = "idMeal"></div>
-    <div id = "strCategory"></div>
-    <div id = "strArea"></div>
-    <div id = "strInstructions"></div>
-    <script src="./script/meal.js"></script>
+    <div class="box">
+        <h1 id="mealHeading"></h1><br>
+        <img id="strMealThumb"><br>
+        <table>
+            <tr>
+                <td class="col1"><span class="key">Meal ID : </span></td>
+                <td><span class="value" id="idMeal"></span></td>
+            </tr>
+            <tr id="tagRow">
+                <td class="col1"><span class="key">Meal Tag : </span></td>
+                <td><span class="value" id="strTags"></span></td>
+            </tr>
+            <tr>
+                <td class="col1"><span class="key">Meal Category : </span></td>
+                <td><span class="value" id="strCategory"></span></td>
+            </tr>
+            <tr>
+                <td class="col1"><span class="key">Serve Area : </span></td>
+                <td><span class="value" id="strArea"></span></td>
+            </tr>
+            <tr>
+                <td class="col1"><span class="key">Ingredients : </span></td>
+                <td><span class="value" id="ingredients"></span></td>
+            </tr>
+            <tr>
+                <td class="col1"><span class="key">Youtube Link : </span></td>
+                <td><a class="value" id="strYoutube">Click here to visit</a></td>
+            </tr>
+            <tr>
+                <td class="col1"><span class="key">Source Link : </span></td>
+                <td><a class="value" id="strSource">Click here to visit</a></td>
+            </tr>
+        </table>
+        <br><br>
+        <!-- <span class="key">Meal ID : </span><span id = "idMeal"></span><br>
+        <span class="key">Meal Category : </span><span id = "strCategory"></span><br>
+        <span class="key">Serve Area : </span><span id = "strArea"></span><br> -->
+        <div id="instrn">
+            <span class="key">Instructions : </span><span class="value" id="strInstructions"></span><br>
+        </div>
+        <a id="homeLink" href="./index.html">Back to HomePage</a>
+        <script src="./script/meal.js"></script>
 </body>
+
 </html>
