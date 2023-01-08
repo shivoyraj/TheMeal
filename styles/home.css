@@ -34,7 +34,7 @@ h2{
 
 #searchInput {
     width: 35vw;
-    height: 40px;
+    height: 5vmin;
     margin: 0px 20%;
     border: 5px;
     border-radius: 20px;

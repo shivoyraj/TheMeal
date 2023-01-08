@@ -48,9 +48,9 @@ h1 {
 
 li {
     /* Add some vertical spacing between items */
-    margin: 10px 0;
+    margin: 10px 10px;
     width: 60vw;
-    height: 15vh;
+    height: 15vmin;
     background-color: #ecf0f1;
 }
 
@@ -60,14 +60,14 @@ li:hover {
 
 #itemThumbnail {
     width: 10vw;
-    height: 15vh;
+    height: 15vmin;
 }
 
 #deleteIcon {
     position: relative;
     top: -2vh;
-    left: 45vw;
-    font-size: 4vmin;
+    left: 75%;
+    font-size: 3vmin;
 }
 
 #deleteIcon:hover {
@@ -76,15 +76,16 @@ li:hover {
 
 #itemName {
     position: relative;
-    top: -18vh;
+    top:  -120%;
     left: 18%;
     font-size: 3vmin;
 }
 
 #itemCategory { 
     position: relative;
-    top: -15vh;
+    top: -100%;
     left: 18%;
+    font-size: 2vmin;
 }
 
 a {
@@ -96,4 +97,37 @@ a {
 
 a:hover{
     color: #ecf0f1;
+}
+
+@media(width<=1000px){
+    #deleteIcon {
+        left: 72%;
+    }
+}
+
+@media(width<=700px){
+    #deleteIcon {
+        left: 70%;
+    }
+    a{
+        left: 38%;
+    }
+}
+
+@media(width<=550px){
+    #deleteIcon {
+        left: 68%;
+    }
+    a{
+        left: 36%;
+    }
+}
+
+@media(width<=450px){
+    #deleteIcon {
+        left: 65%;
+    }
+    a{
+        left: 34%;
+    }
 }
