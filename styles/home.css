@@ -117,3 +117,9 @@ button:hover {
     color: aliceblue;
     background-color: #9DA7E0;
 }
+
+@media(width<600px){
+    #favlink{
+        margin-left: 34%;
+    }
+}
