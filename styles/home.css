@@ -43,16 +43,9 @@ h2{
 input[type="text"] {
     text-align: center;
     background: url('../media/search.svg') no-repeat right;
-    background-size :25px;
+    background-size : 3vmin;
     background-color: #f4f4f4;
 }
-
-/* #searchIcon {
-    height: 20px;
-    position: relative;
-    top: 4vmin;
-    left: 45vw;
-} */
 
 #resultItems {
     width: 59vw;
