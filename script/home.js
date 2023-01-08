@@ -41,7 +41,7 @@ function addToSearchSuggestion(list, inputText) {
             let c1 = document.createElement("td");
             c1.append(item.strMeal)
             c1.addEventListener('click', function () {
-                window.open('../meal.html?name=' + item.strMeal, '_blank');
+                window.open("./meal.html?name=" + item.strMeal, "_blank");
             })
             let c2 = document.createElement("td");
             let button = document.createElement("button");
