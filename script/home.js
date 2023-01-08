@@ -41,11 +41,10 @@ function addToSearchSuggestion(list, inputText) {
             let c1 = document.createElement("td");
             c1.append(item.strMeal)
             c1.addEventListener('click', function () {
-                if (window.location.hostname == 'localhost' || window.location.hostname == '127.0.0.1')
-                    window.open("../meal.html?name=" + item.strMeal, "_blank");
-                else
-                    window.open("../TheMeal/meal.html?name=" + item.strMeal, "_blank");
-            })
+                var baseUrl = document.location.origin;
+                var filePath = '/meal.html';
+                window.open(baseUrl + filePath + "?name=" + item.strMeal, "_blank");
+              });              
             let c2 = document.createElement("td");
             let button = document.createElement("button");
             if (!getCookie(item.idMeal))
