@@ -16,21 +16,24 @@ h1{
     font-size: 7vmin;
 }
 
-#homeLink {
-    position: absolute;
-    top: 96%;
-    left: 45vw;
-    color: rgb(98, 35, 35);
-}
-
-#homeLink:hover {
-    color: #ecf0f1;
-}
-
 img {
     border-radius: 10px;
-    height: 40vh;
+    height: 20vmax;
     width: 20vw;
+}
+
+table{
+    height: 20vmax;
+    margin-left: 23vw;
+    margin-top: -20vmax;
+}
+
+.col1{
+    width: 10vw;
+}
+
+td{
+    max-width: 60vw;
 }
 
 .key{
@@ -47,7 +50,7 @@ img {
 }
 
 #instrn{
-    margin-top: 15vmin;
+    margin-top: 5vmin;
     margin-right: 1vw;
     margin-bottom: 3vh;
     max-height: 25vmin;
@@ -75,15 +78,13 @@ img {
     background-color: #a8bbbf;
 }
 
-table{
-    margin-left: 23vw;
-    margin-top: -40vh;
+#homeLink {
+    position: absolute;
+    top: 96%;
+    left: 45vw;
+    color: rgb(98, 35, 35);
 }
 
-.col1{
-    width: 10vw;
-}
-
-td{
-    max-width: 60vw;
+#homeLink:hover {
+    color: #ecf0f1;
 }
