@@ -42,8 +42,12 @@ function addToSearchSuggestion(list, inputText) {
             c1.append(item.strMeal)
             c1.addEventListener('click', function () {
                 var baseUrl = document.location.origin;
-                var filePath = '/meal.html';
-                window.open(baseUrl + filePath + "?name=" + item.strMeal, "_blank");
+                console.log(document.location);
+                console.log(baseUrl);
+                if (window.location.hostname == 'localhost' || window.location.hostname == '127.0.0.1')
+                    window.open("../meal.html?name=" + item.strMeal, "_blank");
+                else
+                    window.open("../TheMeal/meal.html?name=" + item.strMeal, "_blank");
               });              
             let c2 = document.createElement("td");
             let button = document.createElement("button");
