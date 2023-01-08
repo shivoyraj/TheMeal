@@ -10,7 +10,7 @@ inputField.addEventListener('input', async function () {
     if (inputText.length == 1)
         list = await getData(inputText.charAt(0))
 
-    if (inputText.length == 0) 
+    if (inputText.length == 0)
         document.getElementById("results").innerHTML = "";
     else
         addToSearchSuggestion(list, inputText)
@@ -41,7 +41,10 @@ function addToSearchSuggestion(list, inputText) {
             let c1 = document.createElement("td");
             c1.append(item.strMeal)
             c1.addEventListener('click', function () {
-                window.open("./meal.html?name=" + item.strMeal, "_blank");
+                if (window.location.hostname == 'localhost' || window.location.hostname == '127.0.0.1')
+                    window.open("../meal.html?name=" + item.strMeal, "_blank");
+                else
+                    window.open("../TheMeal/meal.html?name=" + item.strMeal, "_blank");
             })
             let c2 = document.createElement("td");
             let button = document.createElement("button");
