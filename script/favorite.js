@@ -1,25 +1,5 @@
 import { getAllCookies , deleteCookie } from "./cookies.js";
 
-var getData = async function (id) {
-    let response;
-    let url = 'https://www.themealdb.com/api/json/v1/1/lookup.php?i=' + id
-    try {
-        response = await fetch(url);
-    }
-    catch (err) {
-        console.log(err)
-    }
-
-    const data = await response.json();
-    let obj = data.meals[0]
-    return obj
-}
-
-function deleteItem(id){
-    deleteCookie(id)
-}
-
-
 function loadCookies() {
     
     let map = getAllCookies();
@@ -32,15 +12,16 @@ function loadCookies() {
         let itemName = document.createElement("p")
         let itemCategory = document.createElement("p")
         
-        let obj  = await getData(k)
+        let res  = await (await fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${k}`)).json()
+        let obj = res.meals[0]
 
         itemThumbnail.src = obj.strMealThumb
         itemThumbnail.id = "itemThumbnail"
         deleteIcon.src = "../media/trash.png"
         deleteIcon.id = "deleteIcon"
         deleteIcon.className = "fa fa-trash"
-        deleteIcon.addEventListener('click', function () {  // Add click event listener
-            deleteItem(k)
+        deleteIcon.addEventListener('click', function () {  
+            deleteCookie(id)
             item.remove()
         });
         itemName.innerHTML = v

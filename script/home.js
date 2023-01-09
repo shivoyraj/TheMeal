@@ -1,85 +1,56 @@
 import { setCookie, getCookie, deleteCookie } from './cookies.js';
 
 let inputField = document.getElementById('searchInput');
-var list;
-
 inputField.addEventListener('input', async function () {
 
     let inputText = inputField.value;
 
-    if (inputText.length == 1)
-        list = await getData(inputText.charAt(0))
-
-    if (inputText.length == 0)
+    if (inputText.length == 0) {
         document.getElementById("results").innerHTML = "";
-    else
-        addToSearchSuggestion(list, inputText)
-});
+    }
 
-var getData = async function (char) {
-    list = []
-    let response;
-    let url = 'https://www.themealdb.com/api/json/v1/1/search.php?f=' + char
-    try {
-        response = await fetch(url);
+    else if (inputText.length == 1) {
+        let res = await (await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${inputText}`)).json()
+        addToSearchSuggestion(res.meals, inputText)
     }
-    catch (err) {
-        console.log(err)
+
+    else {
+        let res = await (await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${inputText}`)).json()
+        addToSearchSuggestion(res.meals, inputText)
     }
-    let data = await response.json();
-    data.meals.forEach(meal => {
-        list.push(meal)
-    });
-    return list
-}
+});
 
 function addToSearchSuggestion(list, inputText) {
     document.getElementById("results").innerHTML = "";
     list.forEach(item => {
-        if (item.strMeal.toLowerCase().startsWith(inputText.toLowerCase())) {
-            let row = document.createElement("tr");
-            let c1 = document.createElement("td");
-            c1.append(item.strMeal)
-            c1.addEventListener('click', function () {
-                var baseUrl = document.location.origin;
-                console.log(document.location);
-                console.log(baseUrl);
-                if (window.location.hostname == 'localhost' || window.location.hostname == '127.0.0.1')
-                    window.open("../meal.html?name=" + item.strMeal, "_blank");
-                else
-                    window.open("../TheMeal/meal.html?name=" + item.strMeal, "_blank");
-              });              
-            let c2 = document.createElement("td");
-            let button = document.createElement("button");
-            if (!getCookie(item.idMeal))
-                button.innerHTML = "Add to Fav";
+        let row = document.createElement("tr");
+        let c1 = document.createElement("td");
+        c1.append(item.strMeal)
+        c1.addEventListener('click', function () {
+            if (window.location.hostname == 'localhost' || window.location.hostname == '127.0.0.1')
+                window.open("../meal.html?name=" + item.strMeal, "_blank");
             else
+                window.open("../TheMeal/meal.html?name=" + item.strMeal, "_blank");
+        });
+        let c2 = document.createElement("td");
+        let button = document.createElement("button");
+        if (!getCookie(item.idMeal))
+            button.innerHTML = "Add to Fav";
+        else
+            button.innerHTML = "Remove from Fav";
+        button.addEventListener('click', function () {
+            if (button.innerHTML == "Add to Fav") {
+                setCookie(item.idMeal, item.strMeal)
                 button.innerHTML = "Remove from Fav";
-            button.addEventListener('click', function () {  // Add click event listener
-                if (button.innerHTML == "Add to Fav") {
-                    addToFavorite(item)
-                    console.log(item)
-                    button.innerHTML = "Remove from Fav";
-                }
-                else {
-                    removeFromFavorite(item)
-                    button.innerHTML = "Add to Fav";
-                }
-            });
-            c2.append(button);
-            row.append(c1)
-            row.append(c2)
-            document.getElementById("results").append(row);
-        }
+            }
+            else {
+                deleteCookie(item.idMeal)
+                button.innerHTML = "Add to Fav";
+            }
+        });
+        c2.append(button);
+        row.append(c1)
+        row.append(c2)
+        document.getElementById("results").append(row);
     })
-}
-
-function addToFavorite(item) {
-    console.log("Adding item to favorite list " + item.strMeal)
-    setCookie(item.idMeal, item.strMeal)
-}
-
-function removeFromFavorite(item) {
-    console.log("Removing item from favorite list " + item.strMeal)
-    deleteCookie(item.idMeal)
 }
