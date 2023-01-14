@@ -1,3 +1,4 @@
+//function will be used for setting cookies
 export function setCookie(name, value, expires) {
     let expDate = "";
     if (expires) {
@@ -8,6 +9,7 @@ export function setCookie(name, value, expires) {
     document.cookie = name + "=" + (value || "") + "; path=/" + expDate;
 }
 
+// function will use to call for get cookie by name
 export function getCookie(name) {
     const nameEQ = name + "=";
     const ca = document.cookie.split(';');
@@ -19,6 +21,7 @@ export function getCookie(name) {
     return null;
 }
 
+//function will be use for getting all the cookies
 export function getAllCookies() {
     const cookieMap = new Map();
     const cookies = document.cookie.split(';');
@@ -29,6 +32,7 @@ export function getAllCookies() {
     return cookieMap;
 }
 
+//function will be use to delete a cookie by name
 export function deleteCookie(name){
     setCookie(name,'', 'Thu, 01 Jan 1970 00:00:00 GMT')
 }
